@@ -1,0 +1,153 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import Window kivy.core.window.Window
+#:import KivyLexer kivy.extras.highlight.KivyLexer
+#:import colors kivymd.color_definitions.colors
+# :import open_discord helper_func.open_discord
+# :import open_github helper_func.open_github
+#:import open_link scripts.script.open_link
+
+
+
+
+
+MDBoxLayout:
+    orientation: 'vertical'
+
+    MDToolbar:
+        title: "Kivy Development Environment 2.0"
+        md_bg_color: app.theme_cls.bg_darkest
+        right_action_items: [["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()]]
+
+    MDTabs:
+        id: tabs
+        # tab_indicator_type: "line-round"
+        tab_indication_anim: True
+        ripple_duration: 3
+        spacing: "10sp"
+        background_color: app.theme_cls.bg_darkest
+
+
+        # text_color_active: (0,0,0.5,1)
+
+
+<Seperator@Widget>
+    size_hint_y: None
+    height: "20sp"
+
+<MDSeperator@Widget>
+    size_hint_y: None
+    height: "10sp"
+
+<PlayGround>
+    ScrollView:
+        do_scroll_y: True
+        scroll_type: ["bars", "content"] 
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: "30sp"
+            spacing: "10sp"
+            size_hint_y: None
+            height: 700
+
+
+            MDGridLayout:
+                rows: 14
+                spacing: "15sp"
+                
+                MDTextField:
+                    hint_text: "Enter Width"
+                    icon_right: "ruler"
+                    id: width
+                    icon_right_color: app.theme_cls.primary_dark
+                    mode: "rectangle"
+                    on_text: app.set_property(self, "width")
+
+                
+                MDTextField:
+                    hint_text: "Enter Height"
+                    icon_right: "ruler-square"
+                    id: height
+                    icon_right_color: app.theme_cls.primary_dark
+                    mode: "rectangle"
+                    on_text: app.set_property(self, "height")
+
+
+                MDTextField:
+                    hint_text: "Enter Text"
+                    icon_right: "text"
+                    id: text
+                    icon_right_color: app.theme_cls.primary_dark
+                    mode: "rectangle"
+                    multiline: True
+                    on_text: app.set_property(self,"text")
+                
+                MDTextField:
+                    hint_text: "Enter Background Color"
+                    icon_right: "palette"
+                    id: color
+                    icon_right_color: app.theme_cls.primary_dark
+                    mode: "rectangle"
+                    on_text: app.set_property(self,"bg_color")
+
+
+                MDTextField:
+                    hint_text: "Enter Font Size"
+                    icon_right: "format-letter-case"
+                    id: pos_x
+                    icon_right_color: app.theme_cls.primary_dark
+                    mode: "rectangle"
+                    on_text: app.set_property(self,"font_size")
+                
+                MDTextField:
+                    hint_text: "Set Text Color"
+                    icon_right: "palette-outline"
+                    id: txt_clr
+                    icon_right_color: app.theme_cls.primary_dark
+                    mode: "rectangle"
+                    on_text: app.set_property(self, "text_color")
+
+                # MDTextField:
+                #     hint_text: "Enter Position X"
+                #     icon_right: "compass"
+                #     id: pos_x
+                #     icon_right_color: app.theme_cls.primary_dark
+                #     mode: "rectangle"
+                #     on_text: app.set_property(self,"pos_x")
+                
+                # MDTextField:
+                #     hint_text: "Enter Position Y"
+                #     icon_right: "compass-outline"
+                #     id: pos_y
+                #     icon_right_color: app.theme_cls.primary_dark
+                #     mode: 'rectangle'
+                #     on_text: app.set_property(self,"pos_y")
+                
+                MDTextField:
+                    hint_text: "Enter Position X"
+                    icon_right: "compass"
+                    id: pos_hint
+                    icon_right_color: app.theme_cls.primary_dark
+                    mode: "rectangle"
+                    on_text: app.set_property(self, "pos_x")
+
+                MDTextField:
+                    hint_text: "Enter Position Y"
+                    icon_right: "compass-outline"
+                    id: pos_hint
+                    icon_right_color: app.theme_cls.primary_dark
+                    mode: "rectangle"
+                    on_text: app.set_property(self, "pos_y")
+                
+
+                        
+                Seperator:
+                    
+                MDLabel:
+                    text: app.path
+                    halign: "center"
+                    font_size: "20sp"
+
+<CodeOutput>
+
+
