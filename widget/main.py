@@ -2,12 +2,14 @@ from kivymd.app import MDApp
 from kivymd.uix.tab import MDTabsBase
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivy.core.window import Window
-from kivymd.uix.button import MDRectangleFlatIconButton
+from kivymd.uix.button import MDFlatButton
 from kivymd.uix.behaviors.toggle_behavior import MDToggleButton
 from kivy.properties import ObjectProperty, DictProperty
 from kivy.metrics import sp
+from kivymd.uix.dialog import MDDialog
 from kivy.lang import Builder
 from kivy.utils import get_color_from_hex
+
 from plyer import filechooser
 from scripts.script import *
 
@@ -24,23 +26,12 @@ class Output(MDTab):
     path = r"kv-files\btn.kv"
     Builder.load_file(path)
 
-
-
 class CodeOutput(MDTab):
     pass 
 
-class MDRectangleFlatToggleButton(MDToggleButton,MDRectangleFlatIconButton):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.background_down = MDApp.get_running_app().theme_cls.primary_dark
 
 class KDEWidgetPlayGroundApp(MDApp):
     
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.screen = Builder.load_file(self.path_to_kv_file)
-
-
     # Vars
     width_num = ObjectProperty(255)
     height_num = ObjectProperty(255)
@@ -48,7 +39,7 @@ class KDEWidgetPlayGroundApp(MDApp):
     background_color = ObjectProperty(get_color_from_hex(get_color_from_text("Sienna")))
     pos_x = ObjectProperty(550)
     pos_y = ObjectProperty(160)
-    pos_hint =  DictProperty({"center_x":0.5, "center_y":0.5})
+    disabled = ObjectProperty(False)
     font_size = ObjectProperty("12sp")
     font = ObjectProperty("Roboto")
     path = ObjectProperty("")
@@ -58,10 +49,6 @@ class KDEWidgetPlayGroundApp(MDApp):
     path_to_kv_file = r'kv-files\playground.kv'
 
 
-
-    def save_kv_file(self):
-        filechooser.save_file(title="Save .kv file", on_selection=self.export_kv)
-
     def open_file_manager(self):
         filechooser.open_file(title="Choose Font", filters=['*.ttf', '*.otf', '*.ttc'], on_selection=self.return_path)
 
@@ -70,19 +57,20 @@ class KDEWidgetPlayGroundApp(MDApp):
 
         self.font = self.path
 
+    # def open_color_picker(self,)
+
     def build(self):
         self.theme_cls.primary_palette = "BlueGray"
         self.theme_cls.material_style = "M3"
         self.theme_cls.theme_style = "Dark"
         self.title = "Widget Playground"
 
-        return self.screen
+        return Builder.load_file(self.path_to_kv_file)
     
 
     def on_start(self):
         self.root.ids.tabs.add_widget(PlayGround(title="Playground"))
         self.root.ids.tabs.add_widget(Output(title="Output"))
-
 
 
     # TEXTFIELD  EVENTS
@@ -204,6 +192,23 @@ class KDEWidgetPlayGroundApp(MDApp):
 
             except Exception as tb:
                 self.pos_y = 0
+
+    def disable_button(self, instance, *args):
+        if args[0] == False:
+            btn = MDFlatButton(text="OK", text_color=self.theme_cls.primary_light)
+
+            self.dialog = MDDialog(
+                title="All text-fields along with the button are disabled.",
+                buttons=[btn],
+            )
+
+            btn.bind(on_press=self.dialog.dismiss)
+
+            self.disabled = True
+            self.dialog.open()
+        else:
+            self.disabled = False
+            
         
 Window.maximize()
 KDEWidgetPlayGroundApp().run()
