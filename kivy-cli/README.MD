@@ -1,2 +1,0 @@
-# **Kivy CLI aka Mochi**
-
