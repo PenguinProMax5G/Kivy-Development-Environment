@@ -32,11 +32,11 @@ MDBoxLayout:
 
 <Seperator@Widget>
     size_hint_y: None
-    height: "20sp"
+    height: "10sp"
 
 <MDSeperator@Widget>
     size_hint_y: None
-    height: "10sp"
+    height: "20sp"
 
 <PlayGround>
     ScrollView:
@@ -45,10 +45,10 @@ MDBoxLayout:
 
         MDBoxLayout:
             orientation: 'vertical'
-            padding: "30sp"
-            spacing: "10sp"
+            padding: "20sp"
+            spacing: "20sp"
             size_hint_y: None
-            height: 700
+            height: 650
 
 
             MDGridLayout:
@@ -60,8 +60,10 @@ MDBoxLayout:
                     icon_right: "ruler"
                     id: width
                     icon_right_color: app.theme_cls.primary_dark
-                    mode: "rectangle"
                     on_text: app.set_property(self, "width")
+                    helper_text: "A numerical value like 155, 255."
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
 
                 
                 MDTextField:
@@ -69,8 +71,10 @@ MDBoxLayout:
                     icon_right: "ruler-square"
                     id: height
                     icon_right_color: app.theme_cls.primary_dark
-                    mode: "rectangle"
+                    helper_text: "A numerical value like 155, 255."
+                    helper_text_mode: "on_focus"
                     on_text: app.set_property(self, "height")
+                    disabled: app.disabled
 
 
                 MDTextField:
@@ -78,76 +82,97 @@ MDBoxLayout:
                     icon_right: "text"
                     id: text
                     icon_right_color: app.theme_cls.primary_dark
-                    mode: "rectangle"
                     multiline: True
+                    helper_text: "A sentence, a word or an alphabet like 'Pick ME!', 'Change ME!', 'Hello World!'."
+                    helper_text_mode: "on_focus"
                     on_text: app.set_property(self,"text")
+                    disabled: app.disabled
+
                 
-                MDTextField:
-                    hint_text: "Enter Background Color"
-                    icon_right: "palette"
-                    id: color
-                    icon_right_color: app.theme_cls.primary_dark
-                    mode: "rectangle"
-                    on_text: app.set_property(self,"bg_color")
+                # MDSeperator
+
+                # MDSeperator:
 
 
                 MDTextField:
                     hint_text: "Enter Font Size"
                     icon_right: "format-letter-case"
-                    id: pos_x
+                    id: font_size
                     icon_right_color: app.theme_cls.primary_dark
-                    mode: "rectangle"
+                    helper_text: "A numerical value like 50, with or without a unit like '50sp', '50dp', '50pt'."
                     on_text: app.set_property(self,"font_size")
-                
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
+
                 MDTextField:
                     hint_text: "Set Text Color"
                     icon_right: "palette-outline"
                     id: txt_clr
                     icon_right_color: app.theme_cls.primary_dark
-                    mode: "rectangle"
                     on_text: app.set_property(self, "text_color")
+                    helper_text_mode: "on_focus"
+                    helper_text: "A hexadecimal value or the name of a template color like 'White', 'Black'."
+                    disabled: app.disabled
 
-                # MDTextField:
-                #     hint_text: "Enter Position X"
-                #     icon_right: "compass"
-                #     id: pos_x
-                #     icon_right_color: app.theme_cls.primary_dark
-                #     mode: "rectangle"
-                #     on_text: app.set_property(self,"pos_x")
-                
-                # MDTextField:
-                #     hint_text: "Enter Position Y"
-                #     icon_right: "compass-outline"
-                #     id: pos_y
-                #     icon_right_color: app.theme_cls.primary_dark
-                #     mode: 'rectangle'
-                #     on_text: app.set_property(self,"pos_y")
+                MDTextField:
+                    hint_text: "Set Background Color"
+                    icon_right: "palette"
+                    id: bg_clr
+                    icon_right_color: app.theme_cls.primary_dark
+                    on_text: app.set_property(self, "bg_color")
+                    helper_text_mode: "on_focus"
+                    helper_text: "A hexadecimal value or the name of a template color like 'White', 'Black'."
+                    disabled: app.disabled
+
                 
                 MDTextField:
                     hint_text: "Enter Position X"
                     icon_right: "compass"
-                    id: pos_hint
+                    id: pos_x
                     icon_right_color: app.theme_cls.primary_dark
-                    mode: "rectangle"
                     on_text: app.set_property(self, "pos_x")
+                    helper_text: "A numerical value like 50, 60."
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
 
                 MDTextField:
                     hint_text: "Enter Position Y"
                     icon_right: "compass-outline"
-                    id: pos_hint
+                    id: pos_y
                     icon_right_color: app.theme_cls.primary_dark
-                    mode: "rectangle"
                     on_text: app.set_property(self, "pos_y")
-                
+                    helper_text: "A numerical value like 50, 60."
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
 
-                        
+
+                MDSeperator:
+                MDBoxLayout:
+                    orientation: "vertical"
+
+
+                    MDLabel:
+                        text: "Disable Button"
+                        font_size: sp(18.5)
+                        bold: True
+
+
+                    AnchorLayout:
+                        anchor_x: "right"
+                        anchor_y: "center"
+                        padding: 1100      
+
+                        MDSwitch:
+                            id: switch
+                            widget_style: "android"
+                            active: False
+                            on_press: app.disable_button(self, self.active)
+
+                                        
                 Seperator:
                     
                 MDLabel:
                     text: app.path
                     halign: "center"
                     font_size: "20sp"
-
-<CodeOutput>
-
 
