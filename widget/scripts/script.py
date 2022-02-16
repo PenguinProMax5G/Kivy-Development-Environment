@@ -1,7 +1,8 @@
 import json
 from typing import Any
 import webbrowser
-
+from kivy.metrics import pt, mm, cm, inch, dp, sp
+from copy import deepcopy
 data = [        {
         "name": "INDIANRED",
         "hex": "#CD5C5C",
@@ -856,6 +857,14 @@ def get_color_from_text(color_name:str):
     
     return color_name
 
+def change_theme(app_instance):
+    if app_instance.theme_cls.theme_style == "Dark":
+        app_instance.theme_cls.theme_style = "Light"
+    
+    else:
+        app_instance.theme_cls.theme_style = 'Dark'
 def open_link(website_link):
     webbrowser.open(website_link)
+
+
 
