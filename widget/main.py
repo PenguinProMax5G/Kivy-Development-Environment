@@ -2,14 +2,10 @@ from kivymd.app import MDApp
 from kivymd.uix.tab import MDTabsBase
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivy.core.window import Window
-from kivymd.uix.button import MDFlatButton
-from kivymd.uix.behaviors.toggle_behavior import MDToggleButton
-from kivy.properties import ObjectProperty, DictProperty
+from kivy.properties import ObjectProperty
 from kivy.metrics import sp
-from kivymd.uix.dialog import MDDialog
 from kivy.lang import Builder
 from kivy.utils import get_color_from_hex
-
 from plyer import filechooser
 from scripts.script import *
 
@@ -26,8 +22,7 @@ class Output(MDTab):
     path = r"kv-files\btn.kv"
     Builder.load_file(path)
 
-class CodeOutput(MDTab):
-    pass 
+
 
 
 class KDEWidgetPlayGroundApp(MDApp):
@@ -37,8 +32,8 @@ class KDEWidgetPlayGroundApp(MDApp):
     height_num = ObjectProperty(255)
     text = ObjectProperty("Change ME!")
     background_color = ObjectProperty(get_color_from_hex(get_color_from_text("Sienna")))
-    pos_x = ObjectProperty(550)
-    pos_y = ObjectProperty(160)
+    pos_x = ObjectProperty(0)
+    pos_y = ObjectProperty(0)
     disabled = ObjectProperty(False)
     font_size = ObjectProperty("12sp")
     font = ObjectProperty("Roboto")
@@ -57,7 +52,6 @@ class KDEWidgetPlayGroundApp(MDApp):
 
         self.font = self.path
 
-    # def open_color_picker(self,)
 
     def build(self):
         self.theme_cls.primary_palette = "BlueGray"
@@ -81,26 +75,26 @@ class KDEWidgetPlayGroundApp(MDApp):
             try:
                 width = instance.text
                 if width == "":
-                    self.width_num = 255
+                    self.width_num = sp(200)
                 
                 else:
-                    self.width_num = sp(eval(width))    
+                    self.width_num = sp(eval(width))
 
 
             except Exception as tb:
-                self.width_num = sp(200)
+                self.width_num = sp(eval(width))
         
         # Set the height of the button.
         elif type == "height":
             try:
                 height = instance.text
                 if height == "":
-                    self.height_num = 255
+                    self.height_num = sp(eval(height))
                 
                 else:
                     self.height_num = sp(eval(height))
             except Exception as tb:
-                self.height_num = sp(200)
+                self.height_num = sp(eval(height))
 
         # Set the text of the button
         
@@ -193,22 +187,6 @@ class KDEWidgetPlayGroundApp(MDApp):
             except Exception as tb:
                 self.pos_y = 0
 
-    def disable_button(self, instance, *args):
-        if args[0] == False:
-            btn = MDFlatButton(text="OK", text_color=self.theme_cls.primary_light)
-
-            self.dialog = MDDialog(
-                title="All text-fields along with the button are disabled.",
-                buttons=[btn],
-            )
-
-            btn.bind(on_press=self.dialog.dismiss)
-
-            self.disabled = True
-            self.dialog.open()
-        else:
-            self.disabled = False
-            
         
 Window.maximize()
 KDEWidgetPlayGroundApp().run()
