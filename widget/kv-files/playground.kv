@@ -2,32 +2,20 @@
 #:import Window kivy.core.window.Window
 #:import KivyLexer kivy.extras.highlight.KivyLexer
 #:import colors kivymd.color_definitions.colors
-# :import open_discord helper_func.open_discord
-# :import open_github helper_func.open_github
 #:import open_link scripts.script.open_link
-
-
-
-
+#:import change_theme scripts.script.change_theme
 
 MDBoxLayout:
     orientation: 'vertical'
 
     MDToolbar:
         title: "Kivy Development Environment 2.0"
-        md_bg_color: app.theme_cls.bg_darkest
-        right_action_items: [["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()]]
-
+        # right_action_items: [["white-balance-sunny", lambda switch: change_theme(app)], ["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()]]
+        right_action_items: [["white-balance-sunny", lambda switch: change_theme(app)], ["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()]]
+        
+        id: toolbar
     MDTabs:
         id: tabs
-        # tab_indicator_type: "line-round"
-        tab_indication_anim: True
-        ripple_duration: 3
-        spacing: "10sp"
-        background_color: app.theme_cls.bg_darkest
-
-
-        # text_color_active: (0,0,0.5,1)
 
 
 <Seperator@Widget>
@@ -48,7 +36,7 @@ MDBoxLayout:
             padding: "20sp"
             spacing: "20sp"
             size_hint_y: None
-            height: 650
+            height: 600
 
 
             MDGridLayout:
@@ -62,7 +50,7 @@ MDBoxLayout:
                     id: width
                     icon_right_color: app.theme_cls.primary_dark
                     on_text: app.set_property(self, "width")
-                    helper_text: "A numerical value like 155, 255."
+                    helper_text: "A numerical value like 50, 60, 70."
                     helper_text_mode: "on_focus"
                     disabled: app.disabled
 
@@ -72,7 +60,7 @@ MDBoxLayout:
                     icon_right: "ruler-square"
                     id: height
                     icon_right_color: app.theme_cls.primary_dark
-                    helper_text: "A numerical value like 155, 255."
+                    helper_text: "A numerical value like 50, 60, 70."
                     helper_text_mode: "on_focus"
                     on_text: app.set_property(self, "height")
                     disabled: app.disabled
@@ -143,29 +131,6 @@ MDBoxLayout:
 
 
                 MDSeperator:
-                MDBoxLayout:
-                    orientation: "vertical"
-
-
-                    MDLabel:
-                        text: "Disable Button"
-                        font_size: sp(18.5)
-                        bold: True
-
-
-                    AnchorLayout:
-                        anchor_x: "right"
-                        anchor_y: "center"
-                        padding: 1100      
-
-                        MDSwitch:
-                            id: switch
-                            widget_style: "android"
-                            active: False
-                            on_press: app.disable_button(self, self.active)
-
-                                        
-                Seperator:
                     
                 MDLabel:
                     text: app.path
