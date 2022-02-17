@@ -67,7 +67,7 @@
  [],
  False,
  False,
- 1644749169,
+ 1645014269,
  [('runw.exe',
    'C:\\Users\\samad\\OneDrive\\Projects\\kivy-development-environment\\venv\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\runw.exe',
    'EXECUTABLE')])
