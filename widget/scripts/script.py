@@ -1,4 +1,6 @@
+from ast import parse
 import json
+from random import choice
 from typing import Any
 import webbrowser
 from kivy.metrics import pt, mm, cm, inch, dp, sp
@@ -863,8 +865,7 @@ def change_theme(app_instance):
     
     else:
         app_instance.theme_cls.theme_style = 'Dark'
+
 def open_link(website_link):
     webbrowser.open(website_link)
-
-
 
