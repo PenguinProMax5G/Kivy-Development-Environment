@@ -1,4 +1,4 @@
-('C:\\Users\\samad\\OneDrive\\Projects\\kivy-development-environment\\tools\\kivy-development-environment\\widget\\build\\main\\main.pkg',
+('C:\\Users\\samad\\OneDrive\\Projects\\kivy-development-environment\\tools\\kivy-development-environment\\widget\\build\\main\\KivyDevelopmentEnvironment.pkg',
  {'BINARY': 1,
   'DATA': 1,
   'EXECUTABLE': 1,
