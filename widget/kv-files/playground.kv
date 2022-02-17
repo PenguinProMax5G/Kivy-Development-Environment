@@ -5,13 +5,14 @@
 #:import open_link scripts.script.open_link
 #:import change_theme scripts.script.change_theme
 
+
 MDBoxLayout:
     orientation: 'vertical'
 
     MDToolbar:
         title: "Kivy Development Environment 2.0"
         # right_action_items: [["white-balance-sunny", lambda switch: change_theme(app)], ["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()]]
-        right_action_items: [["white-balance-sunny", lambda switch: change_theme(app)], ["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()]]
+        right_action_items: [["white-balance-sunny", lambda switch: change_theme(app)], ["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()], ["palette", lambda theme_change: app.change_palette()]]
         
         id: toolbar
     MDTabs:
@@ -36,7 +37,7 @@ MDBoxLayout:
             padding: "20sp"
             spacing: "20sp"
             size_hint_y: None
-            height: 600
+            height: 710
 
 
             MDGridLayout:
@@ -130,10 +131,8 @@ MDBoxLayout:
                     disabled: app.disabled
 
 
-                MDSeperator:
+                
+               
+
                     
-                MDLabel:
-                    text: app.path
-                    halign: "center"
-                    font_size: "20sp"
 
