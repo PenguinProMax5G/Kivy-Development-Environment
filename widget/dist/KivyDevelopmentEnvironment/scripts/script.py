@@ -1,3 +1,4 @@
+from ast import parse
 import json
 from random import choice
 from typing import Any
@@ -864,15 +865,7 @@ def change_theme(app_instance):
     
     else:
         app_instance.theme_cls.theme_style = 'Dark'
+
 def open_link(website_link):
     webbrowser.open(website_link)
 
-
-
-def change_palette(app_instance):
-
-    palettes = ['Red', 'Pink', 'Purple', 'DeepPurple', 'Indigo', 'Blue', 'LightBlue', 'Cyan', 'Teal', 'Green', 'LightGreen', 'Lime', 'Yellow', 'Amber', 'Orange', 'DeepOrange', 'Brown', 'Gray', 'BlueGray']
-
-    palette = choice(palettes)
-
-    app_instance.theme_cls.primary_palette = f"{palette}"
