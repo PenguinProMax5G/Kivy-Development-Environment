@@ -25,19 +25,21 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 
 exe = EXE(pyz,
-          a.scripts, 
+          a.scripts,
           [],
           exclude_binaries=True,
-          name='main',
+          name='KivyDevelopmentEnvironment',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
           console=False,
+          icon=r'C:\Users\samad\OneDrive\Projects\kivy-development-environment\tools\kivy-development-environment\widget\assets\logo-kivymd.ico',
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None )
+          entitlements_file=None 
+    )
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -46,4 +48,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='main')
+               name='KivyDevelopmentEnvironment')
