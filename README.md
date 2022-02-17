@@ -14,8 +14,8 @@ It is a tool made **entirely** on KivyMD & Python to help **Kivy App Developers*
 - Comes with Mocha Command Line Interface (in development)
 
 
-![](assets/screenshot-1.png)
-![](assets/screenshot-2.png)
+![](widget/assets/screenshot-1.png)
+![](widget/assets/screenshot-2.png)
 
 
 
