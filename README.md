@@ -10,9 +10,7 @@ It is a tool made **entirely** on KivyMD & Python to help **Kivy App Developers*
 ## **Features & Screenshots**
 - Realtime update 🚀
 - Supports Markdown 💫
-- Supports **hexadecimal color values** and more than **100 template colors** (ex: black, white).
-- Comes with Mocha Command Line Interface (in development)
-
+- Supports **hexadecimal color values**, more than **100 template colors** (ex: black, white) & theme_colors.
 
 ![](widget/assets/screenshot-1.png)
 ![](widget/assets/screenshot-2.png)
@@ -21,6 +19,7 @@ It is a tool made **entirely** on KivyMD & Python to help **Kivy App Developers*
 
 ## **Installing Kivy Development Environment**
 ___
+## **Windows**
 ### **Usual Way (With Git)**
 1. Clone the repository by typing:
 ```
@@ -44,6 +43,11 @@ git clone https://github.com/PenguinProMax5G/Kivy-Development-Environment/
 ![](assets/screenshot-5.png)
 
 5. After extracting the folder, head to the `dist` folder and run `main.exe`.
+
+## **Mac OS & Linux**
+Currently, it doesn't support MacOS & Linux. Though, you can clone the repository and install the necessary dependencies but there isn't clear `dmg` or linux executable available. 
+
+Note: If you can create the MacOS and Linux executable, that will be greatly appreciated. Please DM me on Discord (Pickled Egg#)
 
 ## **Using Kivy Development Environment**
 There are two tabs in Kivy Development Environment, they're:
@@ -70,7 +74,10 @@ This is automatically converted into the `sp` unit provided by `Kivy`.
 
 ### **Coloring the Button**
 The developer can put hexadecimal (not RGB) values or 100+ present template colors.
-They can change the `text-color` and `bg-color` of the button. At default the `text-color` is White & the `bg_color` is Sienna.
+They can change the `text-color` and `bg-color` of the button. At default the `text-color` is White & the `bg_color` is Sienna. You can also use theme colors provided by [KivyMD](https://kivymd.readthedocs.io/en/0.104.2/themes/theming/).
+
+**NOTE: THIS FEATURE IS NOT AVAILABLE IN TEXT COLOR (COMING SOON)**
+
 
 ### **Positioning The Button**
 The developer can put pos_x and pos_y values. At default, the pos values are in (0,0).
