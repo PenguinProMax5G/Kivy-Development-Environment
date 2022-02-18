@@ -1,7 +1,7 @@
 # **Kivy Development Environment**
 
 
-![](https://img.shields.io/badge/KivyMD-Python%203.9-red?style=flat-square&logo=python&logoColor=green)
+![](https://img.shields.io/badge/KivyMD-Python%203.9-red?style=plastic&logo=python&logoColor=green)
 
 
 ## **What is Kivy Development Environment?**
@@ -25,7 +25,7 @@ ___
 ```
 git clone https://github.com/PenguinProMax5G/Kivy-Development-Environment/
 ```
-2. Head to the `dist` folder and search for the `main.exe` file.
+2. Head to the `dist` folder and search for the `KivyDevelopmentEnvironment.exe` file.
 3. Run it.
 
 ### **Unusual Way (Without Git)**
@@ -36,13 +36,13 @@ git clone https://github.com/PenguinProMax5G/Kivy-Development-Environment/
 
 3. After clicking the `Code` button, click on `Download Zip`.
 
-![](assets/screenshot-4.png)
+![](widget/assets/screenshot-4.png)
 
 4. Wait for it download, and extract the folder.
 
-![](assets/screenshot-5.png)
+![](widget/assets/screenshot-5.png)
 
-5. After extracting the folder, head to the `dist` folder and run `main.exe`.
+5. After extracting the folder, head to the `dist` folder and run `KivyDevelopmentEnvironment.exe`.
 
 ## **Mac OS & Linux**
 Currently, it doesn't support MacOS & Linux. Though, you can clone the repository and install the necessary dependencies but there isn't clear `dmg` or linux executable available. 
