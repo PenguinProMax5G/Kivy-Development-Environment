@@ -10,7 +10,7 @@ MDBoxLayout:
     orientation: 'vertical'
 
     MDToolbar:
-        title: "Kivy Development Environment 2.0"
+        title: "Kivy Development Environment 2.5"
         # right_action_items: [["white-balance-sunny", lambda switch: change_theme(app)], ["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()]]
         right_action_items: [["white-balance-sunny", lambda switch: change_theme(app)], ["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()], ["palette", lambda theme_change: app.change_palette()]]
         
@@ -37,7 +37,7 @@ MDBoxLayout:
             padding: "20sp"
             spacing: "20sp"
             size_hint_y: None
-            height: 710
+            height: 600
 
 
             MDGridLayout:
@@ -96,7 +96,7 @@ MDBoxLayout:
                     icon_right_color: app.theme_cls.primary_dark
                     on_text: app.set_property(self, "text_color")
                     helper_text_mode: "on_focus"
-                    helper_text: "A hexadecimal value or the name of a template color like 'White', 'Black'."
+                    helper_text: "A hexadecimal value or the name of a template color like 'White', 'Black' or a theme color (primary_color, primary_dark)."
                     disabled: app.disabled
 
                 MDTextField:
@@ -106,7 +106,7 @@ MDBoxLayout:
                     icon_right_color: app.theme_cls.primary_dark
                     on_text: app.set_property(self, "bg_color")
                     helper_text_mode: "on_focus"
-                    helper_text: "A hexadecimal value or the name of a template color like 'White', 'Black'."
+                    helper_text: "A hexadecimal value or the name of a template color like 'White', 'Black' or a theme color (primary_color, primary_dark)."
                     disabled: app.disabled
 
                 

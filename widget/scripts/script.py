@@ -868,4 +868,3 @@ def change_theme(app_instance):
 
 def open_link(website_link):
     webbrowser.open(website_link)
-
