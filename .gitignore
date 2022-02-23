@@ -1,4 +1,3 @@
-scripts/__pycache__/
-backup/
+base/__pycache__/
 test.py
 env/
