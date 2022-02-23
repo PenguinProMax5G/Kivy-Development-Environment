@@ -13,8 +13,8 @@
 - Supports hexadecimal, template colors & theme colors 🎨
 
 - Customize the interface by changing the theme, the primary color & the accent color 💮
-![Screenshot 2](assets\screenshot-2.png)
-![Screenshot 1](assets\screenshot-1.png)
+![Screenshot 2](assets/screenshot-2.png)
+![Screenshot 1](assets/screenshot-1.png)
 ![Screenshot](assets/screenshot.png)
 
 ## **Installing Kivy Development Environment**
