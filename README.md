@@ -1,931 +1,221 @@
-# **Kivy Development Environment**
+# **Kivy Development Environment 2.5**
 
+![Badge](https://img.shields.io/badge/KivyMD-Python%203.9-red?style=plastic&logo=python&logoColor=green)
 
-![](https://img.shields.io/badge/KivyMD-Python%203.9-red?style=plastic&logo=python&logoColor=green)
+## **Features & Screenshots 🧪**
 
+- **Instantaneous Update 🚀**
 
-## **What is Kivy Development Environment?**
-It is a tool made **entirely** on KivyMD & Python to help **Kivy App Developers** to visualize the **_size, color, font and, position_** of a widget (currently a MDRaisedButton).
+- Visualize the correct size, color, font, position and elevation required for your project (Shows for only a button but can be visualized with other widgets as well) 👑
 
-## **Features & Screenshots**
-- Realtime update 🚀
-- Supports Markdown 💫
-- Supports **hexadecimal color values**, more than **100 template colors** (ex: black, white) & theme_colors.
+- Add tooltips and customize them to your liking (radius, background color, text color, text & font style 🎆
 
-![](widget/assets/screenshot-1.png)
-![](widget/assets/screenshot-2.png)
+- Supports hexadecimal, template colors & theme colors 🎨
 
-
+- Customize the interface by changing the theme, the primary color & the accent color 💮
+![Screenshot 2](assets\screenshot-2.png)
+![Screenshot 1](assets\screenshot-1.png)
+![Screenshot](assets/screenshot.png)
 
 ## **Installing Kivy Development Environment**
-___
-## **Windows**
-### **Usual Way (With Git)**
-1. Clone the repository by typing:
-```
-git clone https://github.com/PenguinProMax5G/Kivy-Development-Environment/
-```
-2. Head to the `dist` folder and search for the `KivyDevelopmentEnvironment.exe` file.
-3. Run it.
 
-### **Unusual Way (Without Git)**
-1. Head the repository of [Kivy Development Environment](https://github.com/PenguinProMax5G/Kivy-Development-Environment/)
-2. Click on the green button (`Code`)
+### Downloading Executable (Recommended for Windows)
 
-![](assets/screenshot-3.png)
+Requirements: [Git](https://git-scm.com/downloads)
 
-3. After clicking the `Code` button, click on `Download Zip`.
+```zsh
+> git clone https://github.com/PenguinProMax5G/Kivy-Development-Environment
 
-![](widget/assets/screenshot-4.png)
+> cd Kivy-Development-Environment
 
-4. Wait for it download, and extract the folder.
+> cd platforms/windows/dist
 
-![](widget/assets/screenshot-5.png)
+> KivyDevelopmentEnvironment.exe
 
-5. After extracting the folder, head to the `dist` folder and run `KivyDevelopmentEnvironment.exe`.
-
-## **Mac OS & Linux**
-Currently, it doesn't support MacOS & Linux. Though, you can clone the repository and install the necessary dependencies but there isn't clear `dmg` or linux executable available. 
-
-Note: If you can create the MacOS and Linux executable, that will be greatly appreciated. Please DM me on Discord (Pickled Egg#)
-
-## **Using Kivy Development Environment**
-There are two tabs in Kivy Development Environment, they're:
-
-1. Playground: This is where the developer put in the values of the **text-fields**.
-
-1. Output: This is where it shows the output.
-
-### **Adding Values to KDE**
-The type of the properties are divided into 3 types:
-
-1. Sizing (Changing the size of the button)
-
-2. Coloring (Changing the color of the button)
-
-3. Positioning (Changing the _x_ and _y_ axis of the button)
-
-### **Sizing the Button**
-The developer can change the width and the height of the button by adding a **numerical** or a **floating numerical** value. At default. the size of the button is (255, 255).
-
-This is automatically converted into the `sp` unit provided by `Kivy`.
-
-**Note: If the developer puts the values of the size which is greater than the area of the canvas, it will start to overflow the screen**.
-
-### **Coloring the Button**
-The developer can put hexadecimal (not RGB) values or 100+ present template colors.
-They can change the `text-color` and `bg-color` of the button. At default the `text-color` is White & the `bg_color` is Sienna. You can also use theme colors provided by [KivyMD](https://kivymd.readthedocs.io/en/0.104.2/themes/theming/).
-
-**NOTE: THIS FEATURE IS NOT AVAILABLE IN TEXT COLOR (COMING SOON)**
-
-
-### **Positioning The Button**
-The developer can put pos_x and pos_y values. At default, the pos values are in (0,0).
-
-## **Template Colors**
-There are 100+ available template colors. These are available in a `json` format.
-```json
-{
-    "name": "INDIANRED",
-    "hex": "#CD5C5C",
-    "rgb": "RGB(205, 92, 92)",
-    "families": ["red", "brown"]
-},
-{
-    "name": "LIGHTCORAL",
-    "hex": "#F08080",
-    "rgb": "RGB(240, 128, 128)",
-    "families": ["red", "pink", "coral", "light"]
-},
-{
-    "name": "SALMON",
-    "hex": "#FA8072",
-    "rgb": "RGB(250, 128, 114)",
-    "families": ["red", "pink", "orange", "salmon"]
-},
-{
-    "name": "DARKSALMON",
-    "hex": "#E9967A",
-    "rgb": "RGB(233, 150, 122)",
-    "families": ["red", "pink", "orange", "salmon", "dark"]
-},
-{
-    "name": "LIGHTSALMON",
-    "hex": "#FFA07A",
-    "rgb": "RGB(255, 160, 122)",
-    "families": ["red", "pink", "orange", "salmon", "light"]
-},
-{
-    "name": "CRIMSON",
-    "hex": "#DC143C",
-    "rgb": "RGB(220, 20, 60)",
-    "families": ["red"]
-},
-{
-    "name": "RED",
-    "hex": "#FF0000",
-    "rgb": "RGB(255, 0, 0)",
-    "families": ["red"]
-},
-{
-    "name": "DARKRED",
-    "hex": "#8B0000",
-    "rgb": "RGB(139, 0, 0)",
-    "families": ["red", "dark"]
-},
-{
-    "name": "PINK",
-    "hex": "#FFC0CB",
-    "rgb": "RGB(255, 192, 203)",
-    "families": ["pink"]
-},
-{
-    "name": "LIGHTPINK",
-    "hex": "#FFB6C1",
-    "rgb": "RGB(255, 182, 193)",
-    "families": ["pink", "light"]
-},
-{
-    "name": "HOTPINK",
-    "hex": "#FF69B4",
-    "rgb": "RGB(255, 105, 180)",
-    "families": ["pink", "hot"]
-},
-{
-    "name": "DEEPPINK",
-    "hex": "#FF1493",
-    "rgb": "RGB(255, 20, 147)",
-    "families": ["pink", "deep"]
-},
-{
-    "name": "MEDIUMVIOLETRED",
-    "hex": "#C71585",
-    "rgb": "RGB(199, 21, 133)",
-    "families": ["pink", "purple", "violet", "medium"]
-},
-{
-    "name": "PALEVIOLETRED",
-    "hex": "#DB7093",
-    "rgb": "RGB(219, 112, 147)",
-    "families": ["pink", "pale", "violet"]
-},
-{
-    "name": "CORAL",
-    "hex": "#FF7F50",
-    "rgb": "RGB(255, 127, 80)",
-    "families": ["orange", "coral"]
-},
-{
-    "name": "TOMATO",
-    "hex": "#FF6347",
-    "rgb": "RGB(255, 99, 71",
-    "families": ["orange", "red"]
-},
-{
-    "name": "ORANGERED",
-    "hex": "#FF4500",
-    "rgb": "RGB(255, 69, 0)",
-    "families": ["orange", "red"]
-},
-{
-    "name": "DARKORANGE",
-    "hex": "#FF8C00",
-    "rgb": "RGB(255, 140, 0)",
-    "families": ["orange", "dark"]
-},
-{
-    "name": "ORANGE",
-    "hex": "#FFA500",
-    "rgb": "RGB(255, 165, 0)",
-    "families": ["orange"]
-},
-{
-    "name": "GOLD",
-    "hex": "#FFD700",
-    "rgb": "RGB(255, 215, 0)",
-    "families": ["yellow"]
-},
-{
-    "name": "YELLOW",
-    "hex": "#FFFF00",
-    "rgb": "RGB(255, 255, 0)",
-    "families": ["yellow"]
-},
-{
-    "name": "LIGHTYELLOW",
-    "hex": "#FFFFE0",
-    "rgb": "RGB(255, 255, 224)",
-    "families": ["yellow", "light"]
-},
-{
-    "name": "LEMONCHIFFON",
-    "hex": "#FFFACD",
-    "rgb": "RGB(255, 250, 205)",
-    "families": ["yellow", "lemon"]
-},
-{
-    "name": "LIGHTGOLDENRODYELLOW",
-    "hex": "#FAFAD2",
-    "rgb": "RGB(250, 250, 210)",
-    "families": ["yellow", "light", "goldenrod", "tan"]
-},
-{
-    "name": "PAPAYAWHIP",
-    "hex": "#FFEFD5",
-    "rgb": "RGB(255, 239, 213)",
-    "families": ["pink", "tan"]
-},
-{
-    "name": "MOCCASIN",
-    "hex": "#FFE4B5",
-    "rgb": "RGB(255, 228, 181)",
-    "families": ["pink", "tan"]
-},
-{
-    "name": "PEACHPUFF",
-    "hex": "#FFDAB9",
-    "rgb": "RGB(255, 218, 185)",
-    "families": ["pink", "orange", "peach"]
-},
-{
-    "name": "PALEGOLDENROD",
-    "hex": "#EEE8AA",
-    "rgb": "RGB(238, 232, 170)",
-    "families": ["yellow", "tan", "pale", "goldenrod"]
-},
-{
-    "name": "KHAKI",
-    "hex": "#F0E68C",
-    "rgb": "RGB(240, 230, 140)",
-    "families": ["yellow", "tan", "khaki"]
-},
-{
-    "name": "DARKKHAKI",
-    "hex": "#BDB76B",
-    "rgb": "RGB(189, 183, 107)",
-    "families": ["yellow", "tan", "khaki", "dark"]
-},
-{
-    "name": "LAVENDER",
-    "hex": "#E6E6FA",
-    "rgb": "RGB(230, 230, 250)",
-    "families": ["purple"]
-},
-{
-    "name": "THISTLE",
-    "hex": "#D8BFD8",
-    "rgb": "RGB(216, 191, 216)",
-    "families": ["purple"]
-},
-{
-    "name": "PLUM",
-    "hex": "#DDA0DD",
-    "rgb": "RGB(221, 160, 221)",
-    "families": ["purple"]
-},
-{
-    "name": "VIOLET",
-    "hex": "#EE82EE",
-    "rgb": "RGB(238, 130, 238)",
-    "families": ["purple", "violet", "pink"]
-},
-{
-    "name": "ORCHID",
-    "hex": "#DA70D6",
-    "rgb": "RGB(218, 112, 214)",
-    "families": ["purple", "orchid"]
-},
-{
-    "name": "FUCHSIA",
-    "hex": "#FF00FF",
-    "rgb": "RGB(255, 0, 255)",
-    "families": ["purple", "pink"]
-},
-{
-    "name": "MAGENTA",
-    "hex": "#FF00FF",
-    "rgb": "RGB(255, 0, 255)",
-    "families": ["purple", "pink", "magenta"]
-},
-{
-    "name": "MEDIUMORCHID",
-    "hex": "#BA55D3",
-    "rgb": "RGB(186, 85, 211)",
-    "families": ["purple", "orchid", "medium"]
-},
-{
-    "name": "MEDIUMPURPLE",
-    "hex": "#9370DB",
-    "rgb": "RGB(147, 112, 219)",
-    "families": ["purple", "medium"]
-},
-{
-    "name": "REBECCAPURPLE",
-    "hex": "#663399",
-    "rgb": "RGB(102, 51, 153)",
-    "families": ["purple", "blue"]
-},
-{
-    "name": "BLUEVIOLET",
-    "hex": "#8A2BE2",
-    "rgb": "RGB(138, 43, 226)",
-    "families": ["purple", "blue", "violet"]
-},
-{
-    "name": "DARKVIOLET",
-    "hex": "#9400D3",
-    "rgb": "RGB(148, 0, 211)",
-    "families": ["purple", "dark", "violet"]
-},
-{
-    "name": "DARKORCHID",
-    "hex": "#9932CC",
-    "rgb": "RGB(153, 50, 204)",
-    "families": ["purple", "dark", "orchid"]
-},
-{
-    "name": "DARKMAGENTA",
-    "hex": "#8B008B",
-    "rgb": "RGB(139, 0, 139)",
-    "families": ["purple", "dark", "magenta"]
-},
-{
-    "name": "PURPLE",
-    "hex": "#800080",
-    "rgb": "RGB(128, 0, 128)",
-    "families": ["purple"]
-},
-{
-    "name": "INDIGO",
-    "hex": "#4B0082",
-    "rgb": "RGB(75, 0, 130)",
-    "families": ["purple", "blue"]
-},
-{
-    "name": "SLATEBLUE",
-    "hex": "#6A5ACD",
-    "rgb": "RGB(106, 90, 205)",
-    "families": ["purple", "blue", "slate"]
-},
-{
-    "name": "DARKSLATEBLUE",
-    "hex": "#483D8B",
-    "rgb": "RGB(72, 61, 139)",
-    "families": ["purple", "blue", "slate", "dark"]
-},
-{
-    "name": "MEDIUMSLATEBLUE",
-    "hex": "#7B68EE",
-    "rgb": "RGB(123, 104, 238)",
-    "families": ["purple", "blue", "slate", "medium"]
-},
-{
-    "name": "GREENYELLOW",
-    "hex": "#ADFF2F",
-    "rgb": "RGB(173, 255, 47)",
-    "families": ["green", "yellow"]
-},
-{
-    "name": "CHARTREUSE",
-    "hex": "#7FFF00",
-    "rgb": "RGB(127, 255, 0)",
-    "families": ["green"]
-},
-{
-    "name": "LAWNGREEN",
-    "hex": "#7CFC00",
-    "rgb": "RGB(124, 252, 0)",
-    "families": ["green"]
-},
-{
-    "name": "LIME",
-    "hex": "#00FF00",
-    "rgb": "RGB(0, 255, 0)",
-    "families": ["green"]
-},
-{
-    "name": "LIMEGREEN",
-    "hex": "#32CD32",
-    "rgb": "RGB(50, 205, 50)",
-    "families": ["green"]
-},
-{
-    "name": "PALEGREEN",
-    "hex": "#98FB98",
-    "rgb": "RGB(152, 251, 152)",
-    "families": ["green", "pale"]
-},
-{
-    "name": "LIGHTGREEN",
-    "hex": "#90EE90",
-    "rgb": "RGB(144, 238, 144)",
-    "families": ["green", "light"]
-},
-{
-    "name": "MEDIUMSPRINGGREEN",
-    "hex": "#00FA9A",
-    "rgb": "RGB(0, 250, 154)",
-    "families": ["green", "medium", "spring"]
-},
-{
-    "name": "SPRINGGREEN",
-    "hex": "#00FF7F",
-    "rgb": "RGB(0, 255, 127)",
-    "families": ["green", "spring"]
-},
-{
-    "name": "MEDIUMSEAGREEN",
-    "hex": "#3CB371",
-    "rgb": "RGB(60, 179, 113)",
-    "families": ["green", "sea", "medium"]
-},
-{
-    "name": "SEAGREEN",
-    "hex": "#2E8B57",
-    "rgb": "RGB(46, 139, 87)",
-    "families": ["green", "sea"]
-},
-{
-    "name": "FORESTGREEN",
-    "hex": "#228B22",
-    "rgb": "RGB(34, 139, 34)",
-    "families": ["green", "forest"]
-},
-{
-    "name": "GREEN",
-    "hex": "#008000",
-    "rgb": "RGB(0, 128, 0)",
-    "families": ["green"]
-},
-{
-    "name": "DARKGREEN",
-    "hex": "#006400",
-    "rgb": "RGB(0, 100, 0)",
-    "families": ["green", "dark"]
-},
-{
-    "name": "YELLOWGREEN",
-    "hex": "#9ACD32",
-    "rgb": "RGB(154, 205, 50)",
-    "families": ["green", "yellow"]
-},
-{
-    "name": "OLIVEDRAB",
-    "hex": "#6B8E23",
-    "rgb": "RGB(107, 142, 35)",
-    "families": ["green", "olive"]
-},
-{
-    "name": "OLIVE",
-    "hex": "#6B8E23",
-    "rgb": "RGB(128, 128, 0)",
-    "families": ["green", "olive"]
-},
-{
-    "name": "DARKOLIVEGREEN",
-    "hex": "#556B2F",
-    "rgb": "RGB(85, 107, 47)",
-    "families": ["green", "olive", "dark"]
-},
-{
-    "name": "MEDIUMAQUAMARINE",
-    "hex": "#66CDAA",
-    "rgb": "RGB(102, 205, 170)",
-    "families": ["green", "blue", "aquamarine", "medium"]
-},
-{
-    "name": "DARKSEAGREEN",
-    "hex": "#8FBC8B",
-    "rgb": "RGB(143, 188, 139)",
-    "families": ["green", "sea", "dark"]
-},
-{
-    "name": "LIGHTSEAGREEN",
-    "hex": "#20B2AA",
-    "rgb": "RGB(32, 178, 170)",
-    "families": ["green", "blue", "sea", "light"]
-},
-{
-    "name": "DARKCYAN",
-    "hex": "#008B8B",
-    "rgb": "RGB(0, 139, 139)",
-    "families": ["green", "blue", "cyan", "dark"]
-},
-{
-    "name": "TEAL",
-    "hex": "#008080",
-    "rgb": "RGB(0, 128, 128)",
-    "families": ["green", "blue"]
-},
-{
-    "name": "AQUA",
-    "hex": "#00FFFF",
-    "rgb": "RGB(0, 255, 255)",
-    "families": ["blue", "aqua"]
-},
-{
-    "name": "CYAN",
-    "hex": "#00FFFF",
-    "rgb": "RGB(0, 255, 255)",
-    "families": ["blue", "cyan"]
-},
-{
-    "name": "LIGHTCYAN",
-    "hex": "#E0FFFF",
-    "rgb": "RGB(224, 255, 255)",
-    "families": ["blue", "cyan", "light"]
-},
-{
-    "name": "PALETURQUOISE",
-    "hex": "#AFEEEE",
-    "rgb": "RGB(175, 238, 238)",
-    "families": ["blue", "turquoise", "pale"]
-},
-{
-    "name": "AQUAMARINE",
-    "hex": "#7FFFD4",
-    "rgb": "RGB(127, 255, 212)",
-    "families": ["blue", "aquamarine"]
-},
-{
-    "name": "TURQUOISE",
-    "hex": "#40E0D0",
-    "rgb": "RGB(64, 224, 208)",
-    "families": ["blue", "turquoise"]
-},
-{
-    "name": "MEDIUMTURQUOISE",
-    "hex": "#48D1CC",
-    "rgb": "RGB(72, 209, 204)",
-    "families": ["blue", "turquoise", "medium"]
-},
-{
-    "name": "DARKTURQUOISE",
-    "hex": "#00CED1",
-    "rgb": "RGB(0, 206, 209)",
-    "families": ["blue", "turquoise", "dark"]
-},
-{
-    "name": "CADETBLUE",
-    "hex": "#5F9EA0",
-    "rgb": "RGB(95, 158, 160)",
-    "families": ["blue", "gray"]
-},
-{
-    "name": "STEELBLUE",
-    "hex": "#4682B4",
-    "rgb": "RGB(70, 130, 180)",
-    "families": ["blue", "steel"]
-},
-{
-    "name": "LIGHTSTEELBLUE",
-    "hex": "#B0C4DE",
-    "rgb": "RGB(176, 196, 222)",
-    "families": ["blue", "steel", "light"]
-},
-{
-    "name": "POWDERBLUE",
-    "hex": "#B0E0E6",
-    "rgb": "RGB(176, 224, 230)",
-    "families": ["blue"]
-},
-{
-    "name": "LIGHTBLUE",
-    "hex": "#ADD8E6",
-    "rgb": "RGB(173, 216, 230)",
-    "families": ["blue", "light"]
-},
-{
-    "name": "SKYBLUE",
-    "hex": "#87CEEB",
-    "rgb": "RGB(135, 206, 235)",
-    "families": ["blue", "sky"]
-},
-{
-    "name": "LIGHTSKYBLUE",
-    "hex": "#87CEFA",
-    "rgb": "RGB(135, 206, 250)",
-    "families": ["blue", "sky", "light"]
-},
-{
-    "name": "DEEPSKYBLUE",
-    "hex": "#00BFFF",
-    "rgb": "RGB(0, 191, 255)",
-    "families": ["blue", "sky", "deep"]
-},
-{
-    "name": "DODGERBLUE",
-    "hex": "#1E90FF",
-    "rgb": "RGB(30, 144, 255)",
-    "families": ["blue"]
-},
-{
-    "name": "CORNFLOWERBLUE",
-    "hex": "#6495ED",
-    "rgb": "RGB(100, 149, 237)",
-    "families": ["blue"]
-},
-{
-    "name": "ROYALBLUE",
-    "hex": "#4169E1",
-    "rgb": "RGB(65, 105, 225)",
-    "families": ["blue"]
-},
-{
-    "name": "BLUE",
-    "hex": "#0000FF",
-    "rgb": "RGB(0, 0, 255)",
-    "families": ["blue"]
-},
-{
-    "name": "MEDIUMBLUE",
-    "hex": "#0000CD",
-    "rgb": "RGB(0, 0, 205)",
-    "families": ["blue", "medium"]
-},
-{
-    "name": "DARKBLUE",
-    "hex": "#00008B",
-    "rgb": "RGB(0, 0, 139)",
-    "families": ["blue", "dark"]
-},
-{
-    "name": "NAVY",
-    "hex": "#00008B",
-    "rgb": "RGB(0, 0, 128)",
-    "families": ["blue", "dark"]
-},
-{
-    "name": "MIDNIGHTBLUE",
-    "hex": "#191970",
-    "rgb": "RGB(25, 25, 112))",
-    "families": ["blue", "dark"]
-},
-{
-    "name": "CORNSILK",
-    "hex": "#FFF8DC",
-    "rgb": "RGB(255, 248, 220)",
-    "families": ["brown", "tan"]
-},
-{
-    "name": "BLANCHEDALMOND",
-    "hex": "#FFEBCD",
-    "rgb": "RGB(255, 235, 205)",
-    "families": ["brown", "tan"]
-},
-{
-    "name": "BISQUE",
-    "hex": "#FFE4C4",
-    "rgb": "RGB(255, 228, 196)",
-    "families": ["brown", "tan"]
-},
-{
-    "name": "NAVAJOWHITE",
-    "hex": "#FFDEAD",
-    "rgb": "RGB(255, 222, 173)",
-    "families": ["brown", "tan"]
-},
-{
-    "name": "WHEAT",
-    "hex": "#F5DEB3",
-    "rgb": "RGB(245, 222, 179)",
-    "families": ["brown", "tan"]
-},
-{
-    "name": "BURLYWOOD",
-    "hex": "#DEB887",
-    "rgb": "RGB(222, 184, 135)",
-    "families": ["brown", "tan"]
-},
-{
-    "name": "TAN",
-    "hex": "#D2B48C",
-    "rgb": "RGB(210, 180, 140)",
-    "families": ["brown", "tan"]
-},
-{
-    "name": "ROSYBROWN",
-    "hex": "#BC8F8F",
-    "rgb": "RGB(188, 143, 143)",
-    "families": ["brown", "tan"]
-},
-{
-    "name": "SANDYBROWN",
-    "hex": "#F4A460",
-    "rgb": "RGB(244, 164, 96)",
-    "families": ["brown", "orange"]
-},
-{
-    "name": "GOLDENROD",
-    "hex": "#DAA520",
-    "rgb": "RGB(218, 165, 32)",
-    "families": ["brown", "goldenrod", "orange"]
-},
-{
-    "name": "DARKGOLDENROD",
-    "hex": "#B8860B",
-    "rgb": "RGB(184, 134, 11)",
-    "families": ["brown", "orange", "goldenrod", "dark"]
-},
-{
-    "name": "PERU",
-    "hex": "#CD853F",
-    "rgb": "RGB(205, 133, 63)",
-    "families": ["brown", "orange"]
-},
-{
-    "name": "CHOCOLATE",
-    "hex": "#D2691E",
-    "rgb": "RGB(210, 105, 30)",
-    "families": ["brown", "orange"]
-},
-{
-    "name": "SADDLEBROWN",
-    "hex": "#8B4513",
-    "rgb": "RGB(139, 69, 19)",
-    "families": ["brown"]
-},
-{
-    "name": "SIENNA",
-    "hex": "#A0522D",
-    "rgb": "RGB(160, 82, 45)",
-    "families": ["brown"]
-},
-{
-    "name": "BROWN",
-    "hex": "#A52A2A",
-    "rgb": "RGB(165, 42, 42)",
-    "families": ["brown", "red"]
-},
-{
-    "name": "MAROON",
-    "hex": "#800000",
-    "rgb": "RGB(128, 0, 0)",
-    "families": ["brown", "red"]
-},
-{
-    "name": "WHITE",
-    "hex": "#FFFFFF",
-    "rgb": "RGB(255, 255, 255)",
-    "families": ["white"]
-},
-{
-    "name": "SNOW",
-    "hex": "#FFFAFA",
-    "rgb": "RGB(255, 250, 250)",
-    "families": ["white"]
-},
-{
-    "name": "HONEYDEW",
-    "hex": "#F0FFF0",
-    "rgb": "RGB(240, 255, 240)",
-    "families": ["white"]
-},
-{
-    "name": "MINTCREAM",
-    "hex": "#F5FFFA",
-    "rgb": "RGB(245, 255, 250)",
-    "families": ["white"]
-},
-{
-    "name": "AZURE",
-    "hex": "#F0FFFF",
-    "rgb": "RGB(240, 255, 255)",
-    "families": ["white"]
-},
-{
-    "name": "ALICEBLUE",
-    "hex": "#F0F8FF",
-    "rgb": "RGB(240, 248, 255)",
-    "families": ["white"]
-},
-{
-    "name": "GHOSTWHITE",
-    "hex": "#F8F8FF",
-    "rgb": "RGB(248, 248, 255)",
-    "families": ["white"]
-},
-{
-    "name": "WHITESMOKE",
-    "hex": "#F5F5F5",
-    "rgb": "RGB(245, 245, 245)",
-    "families": ["white"]
-},
-{
-    "name": "SEASHELL",
-    "hex": "#FFF5EE",
-    "rgb": "RGB(255, 245, 238)",
-    "families": ["white", "pink"]
-},
-{
-    "name": "BEIGE",
-    "hex": "#F5F5DC",
-    "rgb": "RGB(245, 245, 220)",
-    "families": ["white", "tan"]
-},
-{
-    "name": "OLDLACE",
-    "hex": "#FDF5E6",
-    "rgb": "RGB(253, 245, 230)",
-    "families": ["white", "tan"]
-},
-{
-    "name": "FLORALWHITE",
-    "hex": "#FDF5E6",
-    "rgb": "RGB(253, 245, 230)",
-    "families": ["white", "tan"]
-},
-{
-    "name": "IVORY",
-    "hex": "#FFFFF0",
-    "rgb": "RGB(255, 255, 240)",
-    "families": ["white", "tan"]
-},
-{
-    "name": "ANTIQUEWHITE",
-    "hex": "#FAEBD7",
-    "rgb": "RGB(250, 235, 215)",
-    "families": ["white", "tan"]
-},
-{
-    "name": "LINEN",
-    "hex": "#FAF0E6",
-    "rgb": "RGB(250, 240, 230)",
-    "families": ["white", "tan"]
-},
-{
-    "name": "LAVENDERBLUSH",
-    "hex": "#FFF0F5",
-    "rgb": "RGB(255, 240, 245)",
-    "families": ["white", "lavender", "pink"]
-},
-{
-    "name": "MISTYROSE",
-    "hex": "#FFE4E1",
-    "rgb": "RGB(255, 228, 225)",
-    "families": ["white", "pink"]
-},
-{
-    "name": "GAINSBORO",
-    "hex": "#DCDCDC",
-    "rgb": "RGB(220, 220, 220)",
-    "families": ["gray"]
-},
-{
-    "name": "LIGHTGRAY",
-    "hex": "#D3D3D3",
-    "rgb": "RGB(211, 211, 211)",
-    "families": ["gray", "light"]
-},
-{
-    "name": "SILVER",
-    "hex": "#C0C0C0",
-    "rgb": "RGB(192, 192, 192)",
-    "families": ["gray"]
-},
-{
-    "name": "DARKGRAY",
-    "hex": "#A9A9A9",
-    "rgb": "RGB(169, 169, 169)",
-    "families": ["gray", "dark"]
-},
-{
-    "name": "GRAY",
-    "hex": "#808080",
-    "rgb": "RGB(128, 128, 128)",
-    "families": ["gray"]
-},
-{
-    "name": "DIMGRAY",
-    "hex": "#696969",
-    "rgb": "RGB(105, 105, 105)",
-    "families": ["gray"]
-},
-{
-    "name": "LIGHTSLATEGRAY",
-    "hex": "#778899",
-    "rgb": "RGB(119, 136, 153)",
-    "families": ["gray", "light", "slate"]
-},
-{
-    "name": "SLATEGRAY",
-    "hex": "#708090",
-    "rgb": "RGB(112, 128, 144)",
-    "families": ["gray",  "slate"]
-},
-{
-    "name": "DARKSLATEGRAY",
-    "hex": "#2F4F4F",
-    "rgb": "RGB(47, 79, 79)",
-    "families": ["gray",  "slate", "dark"]
-},
-{
-    "name": "BLACK",
-    "hex": "#000000",
-    "rgb": "RGB(0, 0, 0)",
-    "families": ["black"]
-
-}
 ```
 
-___
+### Downloading by Installing Dependencies (Recommended for MacOS & Linux)
+
+Requirements: [Git](https://git-scm.com/downloads), [Python 3.9](https://www.python.org/downloads/release/python-390/), [Kivy](https://kivy.org/doc/stable/gettingstarted/installation.html), [KivyMD](https://kivymd.readthedocs.io/en/0.104.2/getting-started/)
+
+```zsh
+> pip install virtualenv
+
+> virtualenv env
+
+> source env/bin/activate
+
+> git clone https://github.com/PenguinProMax5G/Kivy-Development-Environment
+
+> cd Kivy-Development-Environment
+
+> pip install -r requirements.txt
+
+> python main.py
+```
+
+## **Documentation**
+
+### **Theme Colors**
+
+| **Theme Colors** | **Output** |
+|:---|:---|
+| primary_color | app.theme_cls.primary_color |
+| primary_dark | app.theme_cls.primary_dark |
+| accent_light | app.theme_cls.accent_light |
+| accent_color | app.theme_cls.accent_color |
+| accent_dark | app.theme_cls.accent_dark |
+| bg_normal | app.theme_cls.bg_normal |
+| bg_dark | app.theme_cls.bg_dark |
+| bg_darkest | app.theme_cls.bg_darkest |
+| bg_light | app.theme_cls.bg_light |
+| opposite_bg_dark   | app.theme_cls.opposite_bg_dark  |
+| opposite_bg_darkest  | app.theme_cls.opposite_bg_darkest  |
+| opposite_bg_normal | app.theme_cls.opposite_bg_normal |
+| opposite_bg_light | app.theme_cls.opposite_bg_light |
+| error_color | app.theme_cls.error_color |
+
+### **Template Colors**
+
+| name                 | hex     | rgb                | families.0 | families.1 | families.2 | families.3 | families.4 |
+| -------------------- | ------- | ------------------ | ---------- | ---------- | ---------- | ---------- | ---------- |
+| INDIANRED            | #CD5C5C | RGB(205, 92, 92)   | red        | brown      |            |            |            |
+| LIGHTCORAL           | #F08080 | RGB(240, 128, 128) | red        | pink       | coral      | light      |            |
+| SALMON               | #FA8072 | RGB(250, 128, 114) | red        | pink       | orange     | salmon     |            |
+| DARKSALMON           | #E9967A | RGB(233, 150, 122) | red        | pink       | orange     | salmon     | dark       |
+| LIGHTSALMON          | #FFA07A | RGB(255, 160, 122) | red        | pink       | orange     | salmon     | light      |
+| CRIMSON              | #DC143C | RGB(220, 20, 60)   | red        |            |            |            |            |
+| RED                  | #FF0000 | RGB(255, 0, 0)     | red        |            |            |            |            |
+| DARKRED              | #8B0000 | RGB(139, 0, 0)     | red        | dark       |            |            |            |
+| PINK                 | #FFC0CB | RGB(255, 192, 203) | pink       |            |            |            |            |
+| LIGHTPINK            | #FFB6C1 | RGB(255, 182, 193) | pink       | light      |            |            |            |
+| HOTPINK              | #FF69B4 | RGB(255, 105, 180) | pink       | hot        |            |            |            |
+| DEEPPINK             | #FF1493 | RGB(255, 20, 147)  | pink       | deep       |            |            |            |
+| MEDIUMVIOLETRED      | #C71585 | RGB(199, 21, 133)  | pink       | purple     | violet     | medium     |            |
+| PALEVIOLETRED        | #DB7093 | RGB(219, 112, 147) | pink       | pale       | violet     |            |            |
+| CORAL                | #FF7F50 | RGB(255, 127, 80)  | orange     | coral      |            |            |            |
+| TOMATO               | #FF6347 | RGB(255, 99, 71    | orange     | red        |            |            |            |
+| ORANGERED            | #FF4500 | RGB(255, 69, 0)    | orange     | red        |            |            |            |
+| DARKORANGE           | #FF8C00 | RGB(255, 140, 0)   | orange     | dark       |            |            |            |
+| ORANGE               | #FFA500 | RGB(255, 165, 0)   | orange     |            |            |            |            |
+| GOLD                 | #FFD700 | RGB(255, 215, 0)   | yellow     |            |            |            |            |
+| YELLOW               | #FFFF00 | RGB(255, 255, 0)   | yellow     |            |            |            |            |
+| LIGHTYELLOW          | #FFFFE0 | RGB(255, 255, 224) | yellow     | light      |            |            |            |
+| LEMONCHIFFON         | #FFFACD | RGB(255, 250, 205) | yellow     | lemon      |            |            |            |
+| LIGHTGOLDENRODYELLOW | #FAFAD2 | RGB(250, 250, 210) | yellow     | light      | goldenrod  | tan        |            |
+| PAPAYAWHIP           | #FFEFD5 | RGB(255, 239, 213) | pink       | tan        |            |            |            |
+| MOCCASIN             | #FFE4B5 | RGB(255, 228, 181) | pink       | tan        |            |            |            |
+| PEACHPUFF            | #FFDAB9 | RGB(255, 218, 185) | pink       | orange     | peach      |            |            |
+| PALEGOLDENROD        | #EEE8AA | RGB(238, 232, 170) | yellow     | tan        | pale       | goldenrod  |            |
+| KHAKI                | #F0E68C | RGB(240, 230, 140) | yellow     | tan        | khaki      |            |            |
+| DARKKHAKI            | #BDB76B | RGB(189, 183, 107) | yellow     | tan        | khaki      | dark       |            |
+| LAVENDER             | #E6E6FA | RGB(230, 230, 250) | purple     |            |            |            |            |
+| THISTLE              | #D8BFD8 | RGB(216, 191, 216) | purple     |            |            |            |            |
+| PLUM                 | #DDA0DD | RGB(221, 160, 221) | purple     |            |            |            |            |
+| VIOLET               | #EE82EE | RGB(238, 130, 238) | purple     | violet     | pink       |            |            |
+| ORCHID               | #DA70D6 | RGB(218, 112, 214) | purple     | orchid     |            |            |            |
+| FUCHSIA              | #FF00FF | RGB(255, 0, 255)   | purple     | pink       |            |            |            |
+| MAGENTA              | #FF00FF | RGB(255, 0, 255)   | purple     | pink       | magenta    |            |            |
+| MEDIUMORCHID         | #BA55D3 | RGB(186, 85, 211)  | purple     | orchid     | medium     |            |            |
+| MEDIUMPURPLE         | #9370DB | RGB(147, 112, 219) | purple     | medium     |            |            |            |
+| REBECCAPURPLE        | #663399 | RGB(102, 51, 153)  | purple     | blue       |            |            |            |
+| BLUEVIOLET           | #8A2BE2 | RGB(138, 43, 226)  | purple     | blue       | violet     |            |            |
+| DARKVIOLET           | #9400D3 | RGB(148, 0, 211)   | purple     | dark       | violet     |            |            |
+| DARKORCHID           | #9932CC | RGB(153, 50, 204)  | purple     | dark       | orchid     |            |            |
+| DARKMAGENTA          | #8B008B | RGB(139, 0, 139)   | purple     | dark       | magenta    |            |            |
+| PURPLE               | #800080 | RGB(128, 0, 128)   | purple     |            |            |            |            |
+| INDIGO               | #4B0082 | RGB(75, 0, 130)    | purple     | blue       |            |            |            |
+| SLATEBLUE            | #6A5ACD | RGB(106, 90, 205)  | purple     | blue       | slate      |            |            |
+| DARKSLATEBLUE        | #483D8B | RGB(72, 61, 139)   | purple     | blue       | slate      | dark       |            |
+| MEDIUMSLATEBLUE      | #7B68EE | RGB(123, 104, 238) | purple     | blue       | slate      | medium     |            |
+| GREENYELLOW          | #ADFF2F | RGB(173, 255, 47)  | green      | yellow     |            |            |            |
+| CHARTREUSE           | #7FFF00 | RGB(127, 255, 0)   | green      |            |            |            |            |
+| LAWNGREEN            | #7CFC00 | RGB(124, 252, 0)   | green      |            |            |            |            |
+| LIME                 | #00FF00 | RGB(0, 255, 0)     | green      |            |            |            |            |
+| LIMEGREEN            | #32CD32 | RGB(50, 205, 50)   | green      |            |            |            |            |
+| PALEGREEN            | #98FB98 | RGB(152, 251, 152) | green      | pale       |            |            |            |
+| LIGHTGREEN           | #90EE90 | RGB(144, 238, 144) | green      | light      |            |            |            |
+| MEDIUMSPRINGGREEN    | #00FA9A | RGB(0, 250, 154)   | green      | medium     | spring     |            |            |
+| SPRINGGREEN          | #00FF7F | RGB(0, 255, 127)   | green      | spring     |            |            |            |
+| MEDIUMSEAGREEN       | #3CB371 | RGB(60, 179, 113)  | green      | sea        | medium     |            |            |
+| SEAGREEN             | #2E8B57 | RGB(46, 139, 87)   | green      | sea        |            |            |            |
+| FORESTGREEN          | #228B22 | RGB(34, 139, 34)   | green      | forest     |            |            |            |
+| GREEN                | #008000 | RGB(0, 128, 0)     | green      |            |            |            |            |
+| DARKGREEN            | #006400 | RGB(0, 100, 0)     | green      | dark       |            |            |            |
+| YELLOWGREEN          | #9ACD32 | RGB(154, 205, 50)  | green      | yellow     |            |            |            |
+| OLIVEDRAB            | #6B8E23 | RGB(107, 142, 35)  | green      | olive      |            |            |            |
+| OLIVE                | #6B8E23 | RGB(128, 128, 0)   | green      | olive      |            |            |            |
+| DARKOLIVEGREEN       | #556B2F | RGB(85, 107, 47)   | green      | olive      | dark       |            |            |
+| MEDIUMAQUAMARINE     | #66CDAA | RGB(102, 205, 170) | green      | blue       | aquamarine | medium     |            |
+| DARKSEAGREEN         | #8FBC8B | RGB(143, 188, 139) | green      | sea        | dark       |            |            |
+| LIGHTSEAGREEN        | #20B2AA | RGB(32, 178, 170)  | green      | blue       | sea        | light      |            |
+| DARKCYAN             | #008B8B | RGB(0, 139, 139)   | green      | blue       | cyan       | dark       |            |
+| TEAL                 | #008080 | RGB(0, 128, 128)   | green      | blue       |            |            |            |
+| AQUA                 | #00FFFF | RGB(0, 255, 255)   | blue       | aqua       |            |            |            |
+| CYAN                 | #00FFFF | RGB(0, 255, 255)   | blue       | cyan       |            |            |            |
+| LIGHTCYAN            | #E0FFFF | RGB(224, 255, 255) | blue       | cyan       | light      |            |            |
+| PALETURQUOISE        | #AFEEEE | RGB(175, 238, 238) | blue       | turquoise  | pale       |            |            |
+| AQUAMARINE           | #7FFFD4 | RGB(127, 255, 212) | blue       | aquamarine |            |            |            |
+| TURQUOISE            | #40E0D0 | RGB(64, 224, 208)  | blue       | turquoise  |            |            |            |
+| MEDIUMTURQUOISE      | #48D1CC | RGB(72, 209, 204)  | blue       | turquoise  | medium     |            |            |
+| DARKTURQUOISE        | #00CED1 | RGB(0, 206, 209)   | blue       | turquoise  | dark       |            |            |
+| CADETBLUE            | #5F9EA0 | RGB(95, 158, 160)  | blue       | gray       |            |            |            |
+| STEELBLUE            | #4682B4 | RGB(70, 130, 180)  | blue       | steel      |            |            |            |
+| LIGHTSTEELBLUE       | #B0C4DE | RGB(176, 196, 222) | blue       | steel      | light      |            |            |
+| POWDERBLUE           | #B0E0E6 | RGB(176, 224, 230) | blue       |            |            |            |            |
+| LIGHTBLUE            | #ADD8E6 | RGB(173, 216, 230) | blue       | light      |            |            |            |
+| SKYBLUE              | #87CEEB | RGB(135, 206, 235) | blue       | sky        |            |            |            |
+| LIGHTSKYBLUE         | #87CEFA | RGB(135, 206, 250) | blue       | sky        | light      |            |            |
+| DEEPSKYBLUE          | #00BFFF | RGB(0, 191, 255)   | blue       | sky        | deep       |            |            |
+| DODGERBLUE           | #1E90FF | RGB(30, 144, 255)  | blue       |            |            |            |            |
+| CORNFLOWERBLUE       | #6495ED | RGB(100, 149, 237) | blue       |            |            |            |            |
+| ROYALBLUE            | #4169E1 | RGB(65, 105, 225)  | blue       |            |            |            |            |
+| BLUE                 | #0000FF | RGB(0, 0, 255)     | blue       |            |            |            |            |
+| MEDIUMBLUE           | #0000CD | RGB(0, 0, 205)     | blue       | medium     |            |            |            |
+| DARKBLUE             | #00008B | RGB(0, 0, 139)     | blue       | dark       |            |            |            |
+| NAVY                 | #00008B | RGB(0, 0, 128)     | blue       | dark       |            |            |            |
+| MIDNIGHTBLUE         | #191970 | RGB(25, 25, 112))  | blue       | dark       |            |            |            |
+| CORNSILK             | #FFF8DC | RGB(255, 248, 220) | brown      | tan        |            |            |            |
+| BLANCHEDALMOND       | #FFEBCD | RGB(255, 235, 205) | brown      | tan        |            |            |            |
+| BISQUE               | #FFE4C4 | RGB(255, 228, 196) | brown      | tan        |            |            |            |
+| NAVAJOWHITE          | #FFDEAD | RGB(255, 222, 173) | brown      | tan        |            |            |            |
+| WHEAT                | #F5DEB3 | RGB(245, 222, 179) | brown      | tan        |            |            |            |
+| BURLYWOOD            | #DEB887 | RGB(222, 184, 135) | brown      | tan        |            |            |            |
+| TAN                  | #D2B48C | RGB(210, 180, 140) | brown      | tan        |            |            |            |
+| ROSYBROWN            | #BC8F8F | RGB(188, 143, 143) | brown      | tan        |            |            |            |
+| SANDYBROWN           | #F4A460 | RGB(244, 164, 96)  | brown      | orange     |            |            |            |
+| GOLDENROD            | #DAA520 | RGB(218, 165, 32)  | brown      | goldenrod  | orange     |            |            |
+| DARKGOLDENROD        | #B8860B | RGB(184, 134, 11)  | brown      | orange     | goldenrod  | dark       |            |
+| PERU                 | #CD853F | RGB(205, 133, 63)  | brown      | orange     |            |            |            |
+| CHOCOLATE            | #D2691E | RGB(210, 105, 30)  | brown      | orange     |            |            |            |
+| SADDLEBROWN          | #8B4513 | RGB(139, 69, 19)   | brown      |            |            |            |            |
+| SIENNA               | #A0522D | RGB(160, 82, 45)   | brown      |            |            |            |            |
+| BROWN                | #A52A2A | RGB(165, 42, 42)   | brown      | red        |            |            |            |
+| MAROON               | #800000 | RGB(128, 0, 0)     | brown      | red        |            |            |            |
+| WHITE                | #FFFFFF | RGB(255, 255, 255) | white      |            |            |            |            |
+| SNOW                 | #FFFAFA | RGB(255, 250, 250) | white      |            |            |            |            |
+| HONEYDEW             | #F0FFF0 | RGB(240, 255, 240) | white      |            |            |            |            |
+| MINTCREAM            | #F5FFFA | RGB(245, 255, 250) | white      |            |            |            |            |
+| AZURE                | #F0FFFF | RGB(240, 255, 255) | white      |            |            |            |            |
+| ALICEBLUE            | #F0F8FF | RGB(240, 248, 255) | white      |            |            |            |            |
+| GHOSTWHITE           | #F8F8FF | RGB(248, 248, 255) | white      |            |            |            |            |
+| WHITESMOKE           | #F5F5F5 | RGB(245, 245, 245) | white      |            |            |            |            |
+| SEASHELL             | #FFF5EE | RGB(255, 245, 238) | white      | pink       |            |            |            |
+| BEIGE                | #F5F5DC | RGB(245, 245, 220) | white      | tan        |            |            |            |
+| OLDLACE              | #FDF5E6 | RGB(253, 245, 230) | white      | tan        |            |            |            |
+| FLORALWHITE          | #FDF5E6 | RGB(253, 245, 230) | white      | tan        |            |            |            |
+| IVORY                | #FFFFF0 | RGB(255, 255, 240) | white      | tan        |            |            |            |
+| ANTIQUEWHITE         | #FAEBD7 | RGB(250, 235, 215) | white      | tan        |            |            |            |
+| LINEN                | #FAF0E6 | RGB(250, 240, 230) | white      | tan        |            |            |            |
+| LAVENDERBLUSH        | #FFF0F5 | RGB(255, 240, 245) | white      | lavender   | pink       |            |            |
+| MISTYROSE            | #FFE4E1 | RGB(255, 228, 225) | white      | pink       |            |            |            |
+| GAINSBORO            | #DCDCDC | RGB(220, 220, 220) | gray       |            |            |            |            |
+| LIGHTGRAY            | #D3D3D3 | RGB(211, 211, 211) | gray       | light      |            |            |            |
+| SILVER               | #C0C0C0 | RGB(192, 192, 192) | gray       |            |            |            |            |
+| DARKGRAY             | #A9A9A9 | RGB(169, 169, 169) | gray       | dark       |            |            |            |
+| GRAY                 | #808080 | RGB(128, 128, 128) | gray       |            |            |            |            |
+| DIMGRAY              | #696969 | RGB(105, 105, 105) | gray       |            |            |            |            |
+| LIGHTSLATEGRAY       | #778899 | RGB(119, 136, 153) | gray       | light      | slate      |            |            |
+| SLATEGRAY            | #708090 | RGB(112, 128, 144) | gray       | slate      |            |            |            |
+| DARKSLATEGRAY        | #2F4F4F | RGB(47, 79, 79)    | gray       | slate      | dark       |            |            |
+| BLACK                | #000000 | RGB(0, 0, 0)       | black      |            |            |            |            |
