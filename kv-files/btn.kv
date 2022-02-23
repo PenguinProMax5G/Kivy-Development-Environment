@@ -1,0 +1,34 @@
+<MDRaisedTooltipButton@MDRaisedButton+MDTooltip>
+
+<Output>
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDFloatLayout:
+            MDRaisedTooltipButton:
+                id: btn
+
+                # Tooltip
+                tooltip_text: app.tooltip_text
+                tooltip_bg_color: app.tooltip_bg_color
+                tooltip_font_style: app.tooltip_font_style
+                tooltip_text_color: app.tooltip_text_color
+                tooltip_radius: app.tooltip_radius
+
+                
+                # Button Properties
+                text: app.text
+                size_hint: None, None
+                width: app.width_num + (self.ids.lbl_txt.texture_size[0] - self.ids.lbl_txt.texture_size[0])
+                height: app.height_num + (self.ids.lbl_txt.texture_size[0] - self.ids.lbl_txt.texture_size[0])
+                md_bg_color: app.background_color
+                font_size: app.font_size
+                font_name: app.font
+                text_color: app.text_color
+                pos: (app.pos_x, app.pos_y)
+                markdown: True
+                disabled: app.disabled
+                theme_text_color:"Custom"
+                elevation: app.elevation
+                font_style: app.font_style
+               
