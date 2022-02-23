@@ -1,0 +1,224 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import Window kivy.core.window.Window
+#:import KivyLexer kivy.extras.highlight.KivyLexer
+#:import colors kivymd.color_definitions.colors
+#:import open_link base.scripts.open_link
+#:import get_hex_from_color kivy.utils.get_hex_from_color
+#:import change_theme base.scripts.change_theme
+
+<MDTooltipContentClass>
+    orientation: "vertical"
+    spacing: "12dp"
+    size_hint_y: None
+    height: dp(310)
+
+    MDTextField:
+        hint_text: "Enter Tooltip Text"
+        icon_right: "text"
+        helper_text_mode: "on_focus"
+        helper_text: "This will show the text of the tooltip."
+        on_text: app.set_tooltip_property(self, "tooltip_text")
+        icon_right_color: app.theme_cls.primary_light
+
+    MDTextField:
+        hint_text: "Enter Tooltip Background Color"
+        icon_right: "palette"
+        helper_text_mode: "on_focus"
+        helper_text: "This will change the background of the tooltip."
+        on_text: app.set_tooltip_property(self, "tooltip_bg")
+        icon_right_color: app.theme_cls.primary_light
+    
+    MDTextField:
+        hint_text: "Enter Tooltip Font Style"
+        icon_right: "format-letter-case-lower"
+        helper_text_mode: "on_focus"
+        helper_text: "This will change the font style of the tooltip."
+        on_text: app.set_tooltip_property(self, "tooltip_style")
+        icon_right_color: app.theme_cls.primary_light
+
+    MDTextField:
+        hint_text: "Enter Tooltip Text Color"
+        icon_right: "palette-outline"
+        helper_text_mode: "on_focus"
+        helper_text: "This will change the text color of the tooltip."
+        on_text: app.set_tooltip_property(self, "tooltip_txt_clr")
+        icon_right_color: app.theme_cls.primary_light
+        
+        
+    MDTextField:
+        hint_text: "Enter Tooltip Radius"
+        icon_right: "radius"
+        helper_text_mode: "on_focus"
+        helper_text: "This will change the radius of the tooltip."
+        on_text: app.set_tooltip_property(self, "radius")
+        icon_right_color: app.theme_cls.primary_light
+        max_text_length: 4
+    
+
+MDBoxLayout:
+    orientation: 'vertical'
+
+    MDToolbar:
+        title: "Kivy Development Environment 2.5"
+        # right_action_items: [["white-balance-sunny", lambda switch: change_theme(app)], ["discord", lambda open_discord: open_link("https://discord.gg/3ZaVT4RR")], ["github", lambda open_github: open_link("https://github.com/PenguinProMax5G/Kivy-Development-Environment/")], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()]]
+        right_action_items: [["white-balance-sunny", lambda switch: change_theme(app)], ["format-letter-case-lower", lambda filechooser: app.open_file_manager()], ["palette", lambda theme_change: app.change_palette()]]
+        
+        id: toolbar
+    MDTabs:
+        id: tabs
+
+
+<Seperator@Widget>
+    size_hint_y: None
+    height: "10sp"
+
+<MDSeperator@Widget>
+    size_hint_y: None
+    height: "20sp"
+
+<PlayGround>
+
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        ScrollView:
+            do_scroll_y: True
+            scroll_width: 6
+            scroll_type: ["bars", "content"]
+            scroll_distance: 40
+
+            MDGridLayout:
+                rows: 14
+                spacing: "15sp"
+                padding: "20sp"
+                size_hint_y: None
+                height: self.minimum_height
+                
+                MDTextField:
+                    hint_text: "Enter Width"
+                    icon_right: "ruler"
+                    # mode: "fill"
+                    id: width
+                    icon_right_color: app.theme_cls.primary_light
+                    on_text: app.set_property(self, "width")
+                    helper_text: "A numerical value like 50, 60, 70."
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
+
+
+                
+                MDTextField:
+                    hint_text: "Enter Height"
+                    icon_right: "ruler-square"
+                    id: height
+                    icon_right_color: app.theme_cls.primary_light
+                    helper_text: "A numerical value like 50, 60, 70."
+                    helper_text_mode: "on_focus"
+                    on_text: app.set_property(self, "height")
+                    disabled: app.disabled
+
+
+                MDTextField:
+                    hint_text: "Enter Text"
+                    icon_right: "text"
+                    id: text
+                    icon_right_color: app.theme_cls.primary_light
+                    multiline: True
+                    helper_text: "A sentence, a word or an alphabet like 'Pick ME!', 'Change ME!', 'Hello World!'."
+                    helper_text_mode: "on_focus"
+                    on_text: app.set_property(self,"text")
+                    disabled: app.disabled
+                    max_text_length: 100
+
+
+                MDTextField:
+                    hint_text: "Enter Font Size"
+                    icon_right: "format-letter-case"
+                    id: font_size
+                    icon_right_color: app.theme_cls.primary_light
+                    helper_text: "A numerical value like 50, with or without a unit like '50sp', '50dp', '50pt'."
+                    on_text: app.set_property(self,"font_size")
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
+                
+                MDTextField:
+                    hint_text: "Enter Font Style"
+                    icon_right: "format-header-equal"
+                    id: font_style
+                    icon_right_color: app.theme_cls.primary_light
+                    helper_text: "Font style of the button which is from H1’, ‘H2’, ‘H3’, ‘H4’, ‘H5’, ‘H6’, ‘Subtitle1’, ‘Subtitle2’, ‘Body1’, ‘Body2’, ‘Button’, ‘Caption’, ‘Overline’, ‘Icon’."
+                    on_text: app.set_property(self, 'font_style')
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
+                    
+                    
+                MDTextField:
+                    hint_text: "Enter Text Color"
+                    icon_right: "palette-outline"
+                    id: txt_clr
+                    icon_right_color: app.theme_cls.primary_light
+                    on_text: app.set_property(self, "text_color")
+                    helper_text_mode: "on_focus"
+                    helper_text: "A hexadecimal value or the name of a template color like 'White', 'Black' or a theme color (primary_color, primary_dark)."
+                    disabled: app.disabled
+
+                MDTextField:
+                    hint_text: "Enter Background Color"
+                    icon_right: "palette"
+                    id: bg_clr
+                    icon_right_color: app.theme_cls.primary_light
+                    on_text: app.set_property(self, "bg_color")
+                    helper_text_mode: "on_focus"
+                    helper_text: "A hexadecimal value or the name of a template color like 'White', 'Black' or a theme color (primary_color, primary_dark)."
+                    disabled: app.disabled
+
+                
+                MDTextField:
+                    hint_text: "Enter Position X"
+                    icon_right: "compass"
+                    id: pos_x
+                    icon_right_color: app.theme_cls.primary_light
+                    on_text: app.set_property(self, "pos_x")
+                    helper_text: "A numerical value like 50, 60."
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
+
+                MDTextField:
+                    hint_text: "Enter Position Y"
+                    icon_right: "compass-outline"
+                    id: pos_y
+                    icon_right_color: app.theme_cls.primary_light
+                    on_text: app.set_property(self, "pos_y")
+                    helper_text: "A numerical value like 50, 60."
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
+
+                MDTextField:
+                    hint_text: "Enter Elevation"
+                    icon_right: "elevation-rise"
+                    id: elevation
+                    icon_right_color: app.theme_cls.primary_light
+                    on_text: app.set_property(self, "elevation")
+                    helper_text: "A numerical value like 50, 60."
+                    helper_text_mode: "on_focus"
+                    disabled: app.disabled
+                
+                MDSeperator:
+                MDBoxLayout:
+                    orientation: "horizontal"
+                    AnchorLayout:
+                        anchor_x: "center"
+
+                        MDFillRoundFlatIconButton:
+                            text: "Create Tooltip"
+                            icon: "tooltip"
+                            font_style: "Button"
+                            on_release: app.launch_tooltip_dialog()
+
+
+        
+
+
+
+
